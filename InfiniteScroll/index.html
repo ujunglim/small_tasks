@@ -1,40 +1,38 @@
-<!-- 
-window.innerHeight
-window.scrollY
-offsetHeight
--->
-
-
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Infinite Scroll</title>
-  <style>
-    html, body {margin: 0}
-    section .box {
-      height: 500px; background-color: tomato; color: white;
-      box-sizing: border-box; padding: 30px 10px;
-    }
-    section .box:nth-child(2n) {background-color: teal;}
-  </style>
+    <meta charset="UTF-8">
+    <title>Infinite Scroll</title>
+    <style>
+        body {margin: 0}
+        .block {
+            height: 500px;
+            background-color: tomato;
+            color: white;
+            padding: 20px;
+        }
+        .block:nth-child(2n) {
+            background-color: teal;
+        }
+    </style>
 </head>
 <body>
-  <section>
-    <div class="box">1 block</div>
-    <div class="box">2 block</div>
-  </section>
-  <script>
-    let count = 2;
-    window.onscroll = () => {
-      if(window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-        const newBlock = document.createElement('div');
-        newBlock.className = 'box';
-        newBlock.innerHTML = `${++count} block`;
-        document.querySelector('section').appendChild(newBlock);
-      }
-    }
-  </script>
+    <div class="block">1 block</div>
+    <div class="block">2 block</div>
+
+    <script>
+        let num = 2; // default show 2 blocks
+
+        window.onscroll = () => {
+            if (window.innerHeight + window.scrollY >=  document.body.offsetHeight) {
+                ++num;
+                const newBlock = document.createElement('div');
+                newBlock.className = 'block';
+                newBlock.innerHTML = `${num} block`;
+                document.querySelector('body').appendChild(newBlock);
+            }
+        }
+    </script>
 </body>
 </html>
+
