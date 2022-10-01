@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Infinite Scroll</title>
     <style>
-        body {margin: 0}
+        body {
+            margin: 0
+        }
+
         .block {
             height: 500px;
             background-color: tomato;
             color: white;
             padding: 20px;
         }
+
         .block:nth-child(2n) {
             background-color: teal;
         }
     </style>
 </head>
+
 <body>
     <div class="block">1 block</div>
     <div class="block">2 block</div>
@@ -24,7 +30,7 @@
         let num = 2; // default show 2 blocks
 
         window.onscroll = () => {
-            if (window.innerHeight + window.scrollY >=  document.body.offsetHeight) {
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
                 ++num;
                 const newBlock = document.createElement('div');
                 newBlock.className = 'block';
@@ -34,5 +40,5 @@
         }
     </script>
 </body>
-</html>
 
+</html>

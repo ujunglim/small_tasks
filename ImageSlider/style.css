@@ -1,0 +1,32 @@
+.container {
+    width: 640px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.images {
+    display: flex;
+    position: relative;
+} 
+
+button, button:active, button:focus {
+    width: 100px;
+    height: 30px;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: teal;
+}
+
+button:hover {
+    background-color: rgb(48, 173, 161);
+    cursor: pointer;
+}
+
+button:disable {
+    background-color: grey;
+}
+
+.nextBtn {
+    float: right; 
+}
